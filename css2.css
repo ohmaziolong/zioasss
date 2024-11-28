@@ -1,0 +1,313 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header-image {
+    width: 100%;
+    height: 20%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.1);
+    /* Zoom ảnh header khi hover */
+}
+
+span {
+    color: #b0afaf;
+    font-weight: normal;
+    transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+span:hover {
+    color: #fffffe;
+    /* Màu chữ khi hover */
+    font-weight: bold;
+    /* Làm đậm chữ khi hover */
+    transform: scale(1.1);
+    /* Phóng to phần tử một chút khi hover */
+}
+
+.search-container {
+    background-color: #838383;
+    height: 10%;
+    position: relative;
+    background: linear-gradient(45deg, #4c4c4c, #333);
+    /* Thêm gradient cho background */
+}
+
+.section-header {
+    margin: 20px 0;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Thêm hiệu ứng shadow cho header */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #333;
+}
+
+.tabs a {
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tabs a:hover {
+    color: #282829;
+    background-color: #cdcaca;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* Thêm hiệu ứng shadow khi hover */
+}
+
+.tabs a:focus,
+.tabs a.active {
+    color: #564f4f;
+    background-color: #1c1c1c;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Thêm shadow khi tab active */
+}
+
+.tabs a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #333333;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.tabs a:hover::after,
+.tabs a:focus::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.search-container select,
+.search-container input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-container input[type="text"] {
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #838383;
+    border-radius: 5px;
+}
+
+.search-container select:hover,
+.search-container input[type="text"]:hover {
+    background-color: #f1f1f1;
+    /* Thêm hiệu ứng hover cho input */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navigation-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.navigation-links a {
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navigation-links a:hover {
+    text-decoration: underline;
+    color: #ff6600;
+    /* Đổi màu khi hover */
+}
+
+.content {
+    display: flex;
+    background-color: #333;
+    color: rgb(237, 236, 236);
+    height: 80vh;
+    padding: 20px;
+    flex: 1;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+}
+
+.content .left {
+    flex: 1;
+    padding-right: 20px;
+    overflow-y: auto;
+}
+
+.content .left h2 {
+    font-size: 24px;
+    color: #ffcc00;
+    /* Thêm màu cho tiêu đề */
+}
+
+.content .left p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.content .right {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.content .right .card {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    width: 30%;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content .right .card:hover {
+    transform: translateY(-5px);
+    /* Hiệu ứng nâng card lên khi hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Shadow mạnh hơn khi hover */
+}
+
+.content .right .card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.content .right .card:hover img {
+    transform: scale(1.1);
+    /* Phóng to ảnh khi hover vào card */
+}
+
+.content .right .card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.content .right .card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.settings-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: green;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.settings-icon:hover {
+    transform: rotate(90deg);
+    /* Xoay biểu tượng khi hover */
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .content .right {
+        flex-direction: column;
+        width: 100%;
+    }
+    .content .right .card {
+        width: 100%;
+    }
+    .footer {
+        font-size: 16px;
+    }
+}
+
+.contact-section {
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #8f8f8f;
+    border-radius: 10px;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #2f2f2f;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.contact-info .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #222222;
+}
+
+.contact-info p:hover {
+    color: #202020;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        width: 90%;
+    }
+}
